@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TutorConnect</title>
+  <link rel="stylesheet" href="learning.css">
+</head>
+<body>
+  <!-- Role Selection Page -->
+  <div id="rolePage" class="page active">
+    <h1>Welcome to TutorConnect</h1>
+    <p>Select your role to continue</p>
+    <button onclick="showPage('studentLogin')">I am a Student</button>
+    <button onclick="showPage('tutorLogin')">I am a Tutor</button>
+  </div>
+
+  <!-- Student Login Page -->
+  <div id="studentLogin" class="page">
+    <h2>Student Login</h2>
+    <input type="email" id="studentEmail" placeholder="Enter your email">
+    <input type="password" id="studentPassword" placeholder="Enter your password">
+    <button onclick="login('student')">Login</button>
+    <button class="back-btn" onclick="showPage('rolePage')">Back</button>
+  </div>
+
+  <!-- Tutor Login Page -->
+  <div id="tutorLogin" class="page">
+    <h2>Tutor Login</h2>
+    <input type="email" id="tutorEmail" placeholder="Enter your email">
+    <input type="password" id="tutorPassword" placeholder="Enter your password">
+    <button onclick="login('tutor')">Login</button>
+    <button class="back-btn" onclick="showPage('rolePage')">Back</button>
+  </div>
+
+  <!-- Student Dashboard -->
+  <div id="studentDashboard" class="page">
+    <h2>Welcome Student</h2>
+    <p>Select your subject to connect with a tutor:</p>
+    <select>
+      <option>Mathematics</option>
+      <option>Physics</option>
+      <option>Chemistry</option>
+      <option>Biology</option>
+      <option>Computer Science</option>
+    </select>
+    <button>Find Tutor</button>
+    <button class="back-btn" onclick="showPage('rolePage')">Logout</button>
+  </div>
+
+  <!-- Tutor Dashboard -->
+  <div id="tutorDashboard" class="page">
+    <h2>Welcome Tutor</h2>
+    <p>You are now available to connect with students.</p>
+    <div id="earnings">Earnings: $0</div>
+    <button class="back-btn" onclick="showPage('rolePage')">Logout</button>
+  </div>
+
+  <script src="learning.js"></script>
+</body>
+</html>
